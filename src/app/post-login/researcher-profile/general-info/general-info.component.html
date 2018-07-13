@@ -1,0 +1,12 @@
+<form [formGroup]="forms">
+    <app-text-field label="ชื่อ-นามสกุล (ไทย)" formControlName="nameSurnameTH"></app-text-field>
+    <app-text-field label="ชื่อ-นามสกุล (English)" formControlName="nameSurnameEN"></app-text-field>
+    <app-radio-field label="เพศ" [valueList]="genderList" formControlName="gender" name="gender"></app-radio-field>
+    <app-text-field label="ที่อยู่" formControlName="address"></app-text-field>
+    <app-radio-field label="ระดับการศึกษาสูงสุด" [valueList]="educationList" name="education" formControlName="education"></app-radio-field>
+    <app-selector-field label="หน่วยงานที่สังกัด" formControlName="sector" [valueList]="sectorTypes"></app-selector-field>
+
+    <app-text-field label="Password" formControlName="password"></app-text-field>
+    <app-text-field label="Confirm Password" formControlName="confirmPassword"></app-text-field>
+    <app-text-field label="Email Address" formControlName="email"></app-text-field>
+</form>

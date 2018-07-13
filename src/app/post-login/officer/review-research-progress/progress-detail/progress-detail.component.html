@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <h4>ความก้าวหน้างานวิจัยที่กำลังดำเนินการ </h4>
+    <h5>งานวิจัยการใช้แบคทีเรีย A สลายพันธะเคมีในเชื้อไวรัส B เพื่อรักษาโรค C </h5>
+    <div class="btn-panel">
+      <button class="btn btn-lg btn-primary" (click)="open(content, researchStatusDisplayAccept)">{{researchStatusDisplayAccept.statusActionTitle}}</button>
+      <button class="btn btn-lg btn-danger" (click)="open(content, researchStatusDisplayReject)">{{researchStatusDisplayReject.statusActionTitle}}</button>
+    </div>
+  
+    <div class="separator"></div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item ">
+        <a class="nav-link " [ngClass]="currentTab=='detail'?'active':''" (click)="onChangeTab('detail')">ข้อมูลงานวิจัย</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [ngClass]="currentTab=='download'?'active':''" (click)="onChangeTab('download')">ดาวน์โหลดเอกสาร</a>
+      </li>
+  
+    </ul>
+  
+  
+    <div *ngIf="currentTab == 'detail'">
+        <app-research-detail></app-research-detail>
+    </div>
+  
+    <div *ngIf="currentTab == 'download'">
+        <app-research-document-download [status]="researchStatus" ></app-research-document-download>
+    </div>
+  
+  </div>
+  
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">{{modalTitle}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="scroll-modal">
+        <app-progress-manage [researchStatus]="nextStatus"></app-progress-manage>
+      </div>
+  
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="c('Close click')">{{modalBtnAction}}</button>
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
+    </div>
+  </ng-template>

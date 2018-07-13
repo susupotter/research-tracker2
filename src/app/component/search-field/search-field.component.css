@@ -1,0 +1,12 @@
+.fa-search {
+    color: #999999;
+}
+
+.search { position: relative; }
+.search input { text-indent: 20px;}
+.search .fa-search { 
+  position: absolute;
+  top: 13px;
+  left: 7px;
+  font-size: 15px;
+}

@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <h3>รายชื่อผู้ใช้</h3>
+  <div class="action-box">
+    <table class="table">
+      <thead>
+        <td>Username</td>
+        <td>เลขประจำตัวประชาชน</td>
+        <td>ชื่อ-นามสกุล</td>
+        <td>ประเภทผู้ใช้</td>
+        <td></td>
+      </thead>
+      <tr *ngFor="let user of userList">
+        <td>
+          {{user.username}}
+        </td>
+        <td>
+          {{user.uniqueId}}
+        </td>
+        <td>
+          {{user.nameSurname}}
+        </td>
+        <td>
+          {{user.userType | userTypeShow}}
+        </td>
+        <td>
+          <button class="btn btn-primary">
+            ดูรายละเอียด
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

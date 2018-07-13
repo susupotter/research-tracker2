@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <h3>ตั้งค่า{{settingDisplay.title}}</h3>
+  <div class="action-box">
+      <div class="button-panel-table">
+        <label for="fundYearId">ปีงบประมาณ</label>
+          <select class="form-control" id="fundYearId" [disabled]="disabled" [(ngModel)]="fundYearId" (ngModelChange)="onChangeFundYear($event)" >
+              <option></option>
+              <option *ngFor="let v of fundYears" [value]="v.id">{{v.year}}</option>
+          </select>
+      </div>
+      <div><br/></div>
+      <div class="button-panel-table">
+        <label for="stragtegyTypeId">ประเภทยุทธศาสตร์</label>
+          <select class="form-control" id="stragtegyTypeId" [disabled]="disabled" [(ngModel)]="strategyTypeId" (ngModelChange)="onChangeStrategyType($event)" >
+              <option></option>
+              <option *ngFor="let v of stragtegyTypes" [value]="v.id">{{v.strategyType}}</option>
+          </select>
+      </div>
+      <div class="table-form-wrapper">
+          <table *ngIf="stragtegies.length > 0" class="table">
+              <thead>
+                  <td width="60%">{{settingDisplay.title}}</td>
+                  <td width="40%"></td>
+              </thead>
+              <tr *ngFor="let strategy of stragtegies">
+                  <td>
+                    <input type="text" class="form-control" readonly="true" [value]="strategy.id"/>
+                </td>
+                  <td>
+                      <input type="text" class="form-control" [(ngModel)]="strategy.strategy"  />
+                  </td>
+                  <td>
+                      <button class="btn btn-primary" (click)="updateType(strategy.id,strategy.strategy)" >
+                          <i class="fas fa-save"></i> แก้ไข
+                      </button>
+                  </td>
+              </tr>
+          </table>
+      </div>
+      <div class="button-panel-table">
+          <input type="text" class="form-control" [(ngModel)]="addValue" />
+          <button class="btn btn-primary" (click)="saveType(addValue)">
+              <i class="fas fa-plus"></i>&nbsp; เพิ่ม{{settingDisplay.title}}</button>
+      </div>
+
+  </div>
+</div>

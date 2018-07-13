@@ -1,0 +1,96 @@
+<form [formGroup]="forms">
+  <div class="wrapper">
+    <app-text-field label="ชื่อเรื่อง"></app-text-field>
+    <app-text-field label="วิทยานิพนธ์ของคณะ"></app-text-field>
+    <app-text-field label="มหาวิทยาลัย"></app-text-field>
+    <app-text-field label="ประเทศ"></app-text-field>
+
+    <app-radio-field label="ได้ตีพิมพ์" [valueList]="hasRewardValues" name="wasPublished"></app-radio-field>
+    <app-date-picker-field label="วันที่เผยแพร่"></app-date-picker-field>
+    <app-text-field label="ISBN/ISSN"></app-text-field>
+
+    <h5>ข้อมูลบทความวิชาการ</h5>
+    <app-text-field label="บทคัดย่อ"></app-text-field>
+    <div class="form-wrapper">
+      <label>คำสำคัญ (ไทย)</label>
+      <tag-input placeholder="กรุณาใส่คำสำคัญ"></tag-input>
+    </div>
+    <div class="form-wrapper">
+      <label>Tags (English)</label>
+      <tag-input placeholder="Please insert tags."></tag-input>
+    </div>
+    <div class="table-form-wrapper">
+      <h5>รายชื่อผู้เขียนร่วม</h5>
+      <table class="table">
+        <thead>
+          <td width="30%">เลขที่บัตรประจำตัวประชาชน</td>
+          <td>ชื่อ-นามสกุล</td>
+          <td>สังกัด</td>
+        </thead>
+        <tr>
+          <td>
+            <input type="text" class="form-control" />
+          </td>
+          <td>
+            <input type="text" class="form-control" />
+          </td>
+          <td>
+            <input type="text" class="form-control" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" class="form-control" />
+          </td>
+          <td>
+            <input type="text" class="form-control" />
+          </td>
+          <td>
+            <input type="text" class="form-control" />
+          </td>
+        </tr>
+      </table>
+      <div class="button-panel-table">
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i>&nbsp; เพิ่มรายชื่อผู้เขียน</button>
+      </div>
+    </div>
+    <app-radio-field label="ผลงานได้รับรางวัล" [valueList]="hasRewardValues" formControlName="hasReward" name="hasReward" (change)="onChangeHasReward(event)"></app-radio-field>
+
+    <div *ngIf="hasReward">
+      ได้รางวัล ใส่รายละเอียดที่นี่
+    </div>
+
+    
+
+
+    <app-radio-field label="ได้นำไปใช้ประโยชน์" [valueList]="hasRewardValues" formControlName="wasImplemented" name="wasImplemented" (change)="onChangeWasImplemented(event)"></app-radio-field>
+    <div *ngIf="wasImplemented">
+      <h5>การนำไปใช้ประโยชน์</h5>
+      <app-text-field label="ปี" formControlName="implementedYear"></app-text-field>
+      <app-text-field label="รูปแบบการนำไปใช้" formControlName="implementation"></app-text-field>
+      <app-text-field label="ก่อให้เกิดผลกระทบด้านเศรษฐกิจ" formControlName="effectOnEconomics"></app-text-field>
+      <app-text-field label="ก่อให้เกิดผลกระทบด้านสังคม" formControlName="effectOnSociety"></app-text-field>
+      <app-text-field label="ก่อให้เกิดผลกระทบด้านสิ่งแวดล้อม" formControlName="effectOnEnvironment"></app-text-field>
+      <app-text-field label="ก่อให้เกิดผลกระทบด้านด้านอื่น ๆ" formControlName="effectOnOthers"></app-text-field>
+    </div>
+
+
+
+    <br>
+    <div class="form-wrapper">
+      <h5>Upload งานวิจัยฉบับสมบูรณ์</h5>
+      <app-upload-field label="ไฟล์สกุล PDF หรือ ZIP"></app-upload-field>
+      <button class="btn btn-primary">
+        <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+    </div>
+    <div class="form-wrapper">
+      <h5>Upload บทคัดย่อ</h5>
+      <app-upload-field label="ไฟล์สกุล PDF หรือ ZIP"></app-upload-field>
+      <button class="btn btn-primary">
+        <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+    </div>
+    <br>
+
+  </div>
+</form>

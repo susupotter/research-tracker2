@@ -1,0 +1,59 @@
+$width-of-sidemenu: 200px;
+$width-margin-left: 70px;
+
+.template-wrapper {
+    display:grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 60px minmax(100vh, auto);
+}
+
+section {
+    padding: 5px 20px 10px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    
+}
+
+app-header {
+    top: 0px;
+    height: 60px;
+    min-height: 60px;
+    width: 100%;
+    display: block;
+    grid-column: 1 / 3;
+    grid-row:1 / 2;
+    background:navy;
+    color:white;
+}
+
+app-side-menu {
+    width: $width-of-sidemenu;
+    height: auto;
+    //position: absolute;
+    display: block;
+    grid-column:1 / 2;
+    grid-row:2 / 3;
+}
+
+app-header.officer {
+    background:palevioletred;
+}
+
+/*section.hide-side {
+    margin-left: $width-margin-left;
+}
+
+app-side-menu.hide-side {
+    width: $width-margin-left;
+}
+
+section.hide-side.forHQ {
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
+section.full-screen {
+    margin-top: 0px;
+    margin-left: 0px;
+    padding: 5px 20px 10px;
+}*/

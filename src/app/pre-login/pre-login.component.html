@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="header"></div>
+  <div class="top-padding"></div>
+  <div class="action-box">
+    <div class="pre-login-wrapper" *ngIf="subPage=='search'">
+      <div class="search-container ">
+        <h3>งานวิจัยของเรา</h3>
+        <div class="search-subtitle ">
+          ก่อนหน้า พาสปอร์ตซูมเอ็นทรานซ์นรีแพทย์ช็อป แซวไรเฟิลซิลเวอร์เปียโนว่ะ อาว์เทปคอปเตอร์โหงวเฮ้ง &nbsp;
+        </div>
+        <app-search-field placeholder="ค้นหางานวิจัยที่นี่ "></app-search-field>
+      </div>
+      <div class="member-container ">
+        <div class="member-label ">*สำหรับนักวิจัยและเจ้าหน้าที่สถาบัน</div>
+        <button class="register-btn " (click)="goToRegister() ">ลงทะเบียนนักวิจัย</button>
+        <button class="login-btn" (click)="goToLogin()">เข้าสู่ระบบ</button>
+      </div>
+    </div>
+
+    <div class="login-wrapper" *ngIf="subPage=='login'">
+      <div class="login-form-container">
+        <h3>เข้าสู่ระบบ</h3>
+        <app-text-field label="Username"></app-text-field>
+        <app-text-field label="Password"></app-text-field>
+        <div class="login-button-container">
+          <button class="btn" >ลืมรหัสผ่าน?</button>
+          <button class="btn btn-primary go-login-btn" (click)="goToResearcherDashboard()">เข้าสู่ระบบ</button>
+        </div>
+      </div>
+      <div class="member-container ">
+          <div class="member-label ">ยังไม่ได้ลงทะเบียน?</div>
+          <button class="register-btn" (click)="goToRegister() ">ลงทะเบียน</button>
+          <!--<button class="register-btn " (click)="goToRegisterPublic()">ลงทะเบียนบุคคลทั่วไป</button>-->
+        </div>
+      <!--<div class="login-button-container2">
+          <button class="btn back-btn" (click)="goToFirstPage() "> <i class="fas fa-chevron-left"></i> กลับหน้าแรก</button>
+      </div>-->
+    </div>
+  </div>
+  <div class="bottom-padding "></div>
+</div>

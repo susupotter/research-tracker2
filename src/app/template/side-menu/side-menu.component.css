@@ -1,0 +1,28 @@
+.side-menu {
+    background: #E0E0E0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+    padding-left:20px;
+    border-bottom: #EEEEEE solid 1px;
+}
+
+li a {
+    color:black;
+}
+
+ul {
+    -webkit-padding-start: 0px;
+    -webkit-padding-top: 0px;
+}
+
+li.separator {
+    background-color: black;
+    padding: 5px;
+    padding-left:15px;
+    color: white;
+}

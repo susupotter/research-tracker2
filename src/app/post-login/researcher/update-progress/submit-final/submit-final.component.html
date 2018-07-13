@@ -1,0 +1,162 @@
+<div class="wrapper">
+  <div class="action-wrapper">
+    <h3>ส่งงานวิจัยฉบับสมบูรณ์</h3>
+
+    <div class="action-box">
+      <div class="form-wrapper">
+        <h5>Upload ใบนำส่งงานวิจัย</h5>
+        <app-upload-field label="ใบนำส่งงานวิจัย"></app-upload-field>
+      </div>
+      <div class="form-wrapper">
+        <h5>Upload บทคัดย่องานวิจัย</h5>
+        <app-upload-field label="บทคัดย่องานวิจัย"></app-upload-field>
+      </div>
+      <div class="form-wrapper">
+        <h5>Upload งานวิจัยฉบับสมบูรณ์</h5>
+        <app-upload-field label="งานวิจัยฉบับสมบูรณ์"></app-upload-field>
+      </div>
+
+      <br>
+      <br>
+      <h5>ส่งบทความวิชาการ</h5>
+      <app-text-field label="บทคัดย่อ"></app-text-field>
+      <div class="form-wrapper">
+        <label>คำสำคัญ (ไทย)</label>
+        <tag-input placeholder="กรุณาใส่คำสำคัญ"></tag-input>
+      </div>
+      <div class="table-form-wrapper">
+        <h5>รายชื่อผู้เขียนร่วม</h5>
+        <table class="table">
+          <thead>
+            <td width="30%">เลขที่บัตรประจำตัวประชาชน</td>
+            <td>ชื่อ-นามสกุล</td>
+            <td>สังกัด</td>
+          </thead>
+          <tr>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+          </tr>
+        </table>
+        <div class="button-panel-table">
+          <button class="btn btn-primary">
+            <i class="fas fa-plus"></i>&nbsp; เพิ่มรายชื่อผู้เขียน</button>
+        </div>
+      </div>
+      <app-selector-field label="การประเมินบทความ"></app-selector-field>
+      <app-selector-field label="สถานภาพการเผยแพร่"></app-selector-field>
+      <app-selector-field label="วารสารเผยแพร่ในระดับ"></app-selector-field>
+      <app-radio-field label="citation" [valueList]="citationValues"></app-radio-field>
+      <app-radio-field label="เป็นส่วนหนึ่งของวิทยานิพนธ์" [valueList]="partOfThesisValues"></app-radio-field>
+      <app-radio-field label="ผลงานได้รับรางวัล" [valueList]="hasRewardValues"></app-radio-field>
+
+      <br>
+      <div class="form-wrapper">
+        <h5>Upload ไฟล์บทความ</h5>
+        <app-upload-field label="ไฟล์สกุล PDF หรือ ZIP"></app-upload-field>
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+      </div>
+      <br>
+      <br>
+
+      <h5>ส่งรายงานการประชุมวิชาการ</h5>
+      <app-text-field label="ชื่อบทความที่เผยแพร่"></app-text-field>
+      <app-date-picker-field label="วันที่เผยแพร่"></app-date-picker-field>
+
+      <h5>การประชุม</h5>
+      <app-text-field label="ชื่อการประชุม"></app-text-field>
+      <app-text-field label="หน่วยงานที่จัดการประชุม"></app-text-field>
+      <app-date-picker-field label="ช่วงวันที่ประชุม"></app-date-picker-field>
+      <app-date-picker-field label="ถึง"></app-date-picker-field>
+
+      <br>
+      <br>
+      <h5>Proceeding Paper</h5>
+      <app-text-field label="ปีที่"></app-text-field>
+      <app-text-field label="เล่มที่"></app-text-field>
+      <app-text-field label="ตีพิมพ์ในหน้าที่"></app-text-field>
+      <app-text-field label="Editor/Edition/Publisher"></app-text-field>
+      <app-text-field label="บทคัดย่อ"></app-text-field>
+      <div class="table-form-wrapper">
+        <h5>รายชื่อผู้เขียนร่วม</h5>
+        <table class="table">
+          <thead>
+            <td width="30%">เลขที่บัตรประจำตัวประชาชน</td>
+            <td>ชื่อ-นามสกุล</td>
+            <td>สังกัด</td>
+          </thead>
+          <tr>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+            <td>
+              <input type="text" class="form-control" />
+            </td>
+          </tr>
+        </table>
+        <div class="button-panel-table">
+          <button class="btn btn-primary">
+            <i class="fas fa-plus"></i>&nbsp; เพิ่มรายชื่อผู้เขียน</button>
+        </div>
+      </div>
+      <app-selector-field label="การประเมินบทความ"></app-selector-field>
+
+      <app-selector-field label="วารสารเผยแพร่ในระดับ"></app-selector-field>
+      <app-selector-field label="รูปแบบ Proceeding"></app-selector-field>
+      <app-selector-field label="รูปแบบการนำเสนอ"></app-selector-field>
+      <app-radio-field label="เป็นส่วนหนึ่งของวิทยานิพนธ์" [valueList]="partOfThesisValues"></app-radio-field>
+      <app-radio-field label="ผลงานได้รับรางวัล" [valueList]="hasRewardValues"></app-radio-field>
+
+      <!--<div class="form-wrapper">
+        <h5>Upload รายงานการประชุมวิชาการ</h5>
+        <app-upload-field label="รายงานการประชุมวิชาการ"></app-upload-field>
+      </div>-->
+      <div class="form-wrapper">
+        <h5>Upload เอกสารทางการเงิน</h5>
+        <app-upload-field label="รายงานความก้าวหน้า"></app-upload-field>
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+      </div>
+      <div class="form-wrapper">
+        <h5>Upload เอกสารอื่น ๆ</h5>
+        <app-upload-field label="เอกสารอื่น ๆ"></app-upload-field>
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>

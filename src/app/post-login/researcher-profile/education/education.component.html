@@ -1,0 +1,64 @@
+<form [formGroup]="forms">
+  <div class="table-form-wrapper">
+    <h4>ประวัติการศึกษา</h4>
+    <br>
+    <div class="button-panel-table">
+      <button class="btn btn-primary" (click)="open(content)">
+        <i class="fas fa-plus"></i>&nbsp; เพิ่มประวัติการศึกษา</button>
+    </div>
+    <br>
+
+    <table class="table">
+      <thead>
+        <td>สถาบันการศึกษา</td>
+        <td>ชื่อปริญญา</td>
+        <td>สาขา</td>
+        <td width="15%">ปีที่จบการศึกษา</td>
+      </thead>
+      <tr>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+      </tr>
+
+    </table>
+
+
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title">{{modalTitle}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="scroll-modal">
+          <div>
+
+            <app-text-field label="สถาบันการศึกษา" formControlName="instituteName"></app-text-field>
+            <app-text-field label="ชื่อปริญญา" formControlName="degreeName"></app-text-field>
+            <app-text-field label="สาขา" formControlName="subject"></app-text-field>
+            <app-text-field label="ปีที่จบการศึกษา" formControlName="graduateYear"></app-text-field>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="c('Close click')">บันทึก</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
+      </div>
+    </ng-template>
+
+
+  </div>
+</form>

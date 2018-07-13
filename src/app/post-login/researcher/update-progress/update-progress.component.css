@@ -1,0 +1,25 @@
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+
+.action-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10px;
+}
+
+.action-box {
+    background-color:#FFFFFF;
+    border: #F0F0F0 solid 1px;
+    border-radius: 3px; 
+    padding:20px;
+
+    margin-bottom: 20px
+}
+
+.scroll-modal {
+    height: 450px;
+    overflow-y: auto;
+}

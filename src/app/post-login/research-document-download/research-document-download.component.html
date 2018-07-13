@@ -1,0 +1,64 @@
+<div class="action-box">
+
+  <ngb-accordion [activeIds]="getActiveId()">
+
+    <ngb-panel title="งานวิจัยฉบับสมบูรณ์" id="fullResearch"  *ngIf="shouldShowFullResearch()">
+      <ng-template ngbPanelContent >
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> ใบนำส่ง</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> บทคัดย่อ</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> งานวิจัยฉบับสมบูรณ์</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> บทความวิชาการ</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42">รายงานการประชุมวิชาการ </button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารประกอบ 1</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารประกอบ 2</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> ใบเบิกงวดที่ 3</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารอื่น ๆ 1</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารอื่น ๆ 2</button>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="รายงานความก้าวหน้างานวิจัย" id="progressReport"  *ngIf="shouldShowProgressReport()">
+      <ng-template ngbPanelContent>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> แบบฟอร์มรายงานความก้าวหน้า</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารประกอบ 1</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารประกอบ 2</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> ใบเบิกงวดที่ 2</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารอื่น ๆ 1</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารอื่น ๆ 2</button>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="ข้อเสนองานวิจัย" id="proposal">
+      <ng-template ngbPanelContent>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> แบบฟอร์มข้อเสนองานวิจัย</button>
+
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารประกอบ 1</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารประกอบ 2</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> ใบเบิกงวดที่ 1</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารอื่น ๆ 1</button>
+        <button class="btn">
+          <img src="/assets/pdf.png" height="42"> เอกสารอื่น ๆ 2</button>
+      </ng-template>
+    </ngb-panel>
+
+  </ngb-accordion>
+</div>

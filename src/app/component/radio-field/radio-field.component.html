@@ -1,0 +1,8 @@
+<div class="wrapper">
+    <div class="form-group">
+        <label for="{{formId}}">{{label}}</label><br/>
+        <span class="radio" *ngFor="let v of valueList">
+            <input type="radio" id="{{formId}}" [disabled]="disabled" value="{{v.value}}" name="{{name}}" [(ngModel)]="value" (ngModelChange)="change($event)" /> {{v.label}} 
+        </span>
+    </div>
+</div>

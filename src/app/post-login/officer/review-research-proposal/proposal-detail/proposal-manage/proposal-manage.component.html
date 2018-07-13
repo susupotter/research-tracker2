@@ -1,0 +1,27 @@
+  <!--<app-radio-field label="สถานะ" [valueList]="researchStatusList"></app-radio-field>-->
+  <div *ngIf="researchStatus == 'reject'">
+    <app-text-area-field label="เหตุผล"></app-text-area-field>
+  </div>
+
+  <div *ngIf="researchStatus == 'approve'">
+    <app-text-field label="เงินทุนอุดหนุนที่อนุมัติ"></app-text-field>
+    <app-text-field label="กำหนดระยะเวลาให้แล้วเสร็จ (เดือน)"></app-text-field>
+    <app-date-picker-field label="วันที่เริ่มต้นโครงการ"></app-date-picker-field>
+    <app-date-picker-field label="วันส่งรายงานความก้าวหน้า"></app-date-picker-field>
+    <app-date-picker-field label="วันส่งวิทยานิพนธ์ฉบับสมบูรณ์"></app-date-picker-field>
+  </div>
+
+  <div *ngIf="researchStatus == 'others'">
+    <app-date-picker-field label="วันที่ทำสัญญาให้ทุน"></app-date-picker-field>
+
+    <app-date-picker-field label="วันที่ส่งเบิกงวดที่ 1"></app-date-picker-field>
+    <app-date-picker-field label="วันที่ได้รับรายงานความก้าวหน้าโครการ"></app-date-picker-field>
+    <app-date-picker-field label="วันที่อนุมัติรายงานและส่งเบิกงวดที่ 2"></app-date-picker-field>
+    <app-date-picker-field label="วันที่ได้รับงานวิจัยฉบับสมบูรณ์"></app-date-picker-field>
+    <app-date-picker-field label="วันที่อนุมัติงานวิจัยฉบับสมบูรณ์และส่งเบิกงวดที่ 3"></app-date-picker-field>
+    <app-date-picker-field label="วันที่ได้รับมอบ CD"></app-date-picker-field>
+    <app-date-picker-field label="วันที่ได้ทำการเผยแพร่งานวิจัยครั้งแรก"></app-date-picker-field>
+
+    <app-text-field label="มีผลผลิตจากงานวิจัยในรูปแบบอื่น"></app-text-field>
+
+  </div>

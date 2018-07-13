@@ -1,0 +1,75 @@
+<form [formGroup]="forms">
+  <div class="table-form-wrapper">
+    <h4>สิทธิบัตร</h4>
+    <br>
+    <div class="button-panel-table">
+      <button class="btn btn-primary" (click)="open(content)">
+        <i class="fas fa-plus"></i>&nbsp; เพิ่มสิทธิบัตร</button>
+    </div>
+    <br>
+
+    <table class="table">
+      <thead>
+        <td>ประเภท</td>
+        <td>ชื่อสิทธิบัตร / อนุสิทธิบัตร</td>
+        <td>หมายเลข</td>
+        <td>วันที่จด</td>
+      </thead>
+      <tr>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+      </tr>
+
+    </table>
+
+
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title">{{modalTitle}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="scroll-modal">
+          <div>
+
+            <app-selector-field label="ประเภทสิทธิบัตร" formControlName="type"></app-selector-field>
+            <app-text-field label="ชื่อสิทธิบัตร / อนุสิทธิบัตร" formControlName="name"></app-text-field>
+            <app-text-field label="หมายเลข" formControlName="patentNo"></app-text-field>
+            <app-text-field label="เลขที่คำขอ" formControlName="requestNo"></app-text-field>
+            <app-text-field label="ยื่นขอ / จดทะเบียนในนาม" formControlName="nameOfRequester"></app-text-field>
+            <app-text-field label="วันที่ยื่นขอ" formControlName="requestDate"></app-text-field>
+            <app-text-field label="วันที่จดทะเบียน" formControlName="approveDate"></app-text-field>
+
+            <br>
+            <div class="form-wrapper">
+              <h5>Upload เอกสารแนบ</h5>
+              <app-upload-field label="ไฟล์สกุล PDF หรือ ZIP"></app-upload-field>
+              <button class="btn btn-primary">
+                <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+            </div>
+            <br>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="c('Close click')">บันทึก</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
+      </div>
+    </ng-template>
+
+
+  </div>
+</form>

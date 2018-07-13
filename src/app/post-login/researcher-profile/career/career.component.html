@@ -1,0 +1,64 @@
+<form [formGroup]="forms">
+    <div class="table-form-wrapper">
+      <h4>ประวัติการทำงาน</h4>
+      <br>
+      <div class="button-panel-table">
+        <button class="btn btn-primary" (click)="open(content)">
+          <i class="fas fa-plus"></i>&nbsp; เพิ่มประวัติการทำงาน</button>
+      </div>
+      <br>
+  
+      <table class="table">
+        <thead>
+            <td>วันเดือนปีที่เริ่มทำงาน</td>
+            <td>วันเดือนปีที่สิ้นสุด</td>
+            <td>ชื่อบริษัท / ชื่อหน่วยงาน</td>
+            <td width="20%">ตำแหน่ง</td>
+        </thead>
+        <tr>
+          <td>
+  
+          </td>
+          <td>
+  
+          </td>
+          <td>
+  
+          </td>
+          <td>
+  
+          </td>
+        </tr>
+  
+      </table>
+  
+  
+      <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">{{modalTitle}}</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="scroll-modal">
+            <div>
+  
+              <app-date-picker-field label="วันเดือนปีที่เริ่มทำงาน" formControlName="startDate"></app-date-picker-field>
+              <app-date-picker-field label="วันเดือนปีที่สิ้นสุด" formControlName="endDate"></app-date-picker-field>
+              <app-text-field label="ชื่อบริษัท / ชื่อหน่วยงาน" formControlName="organizationName"></app-text-field>
+              <app-text-field label="ตำแหน่ง" formControlName="position"></app-text-field>
+  
+  
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="c('Close click')">บันทึก</button>
+          <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
+        </div>
+      </ng-template>
+  
+  
+    </div>
+  </form>

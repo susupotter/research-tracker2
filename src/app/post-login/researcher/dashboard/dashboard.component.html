@@ -1,0 +1,183 @@
+<div class="dashboard">
+
+
+  <div class="current-research-header">
+    <h4>งานวิจัยปัจจุบัน</h4>
+    <button class="btn btn-primary" (click)="goToProposeResearch()">
+      <i class="fas fa-file-alt"></i>
+      &nbsp; ยื่นเสนองานวิจัยใหม่
+    </button>
+  </div>
+
+
+  <div class="current-research-row">
+    <div class="research-detail">
+      <h5>งานวิจัยพันธะเคมีแบบบีของสารเคมีเอเอเอในการรักษาโรคมะเร็ง</h5>
+      <div>
+        หน้าที่ในโครงการ: หัวหน้าโครงการ
+      </div>
+      <div>
+        แหล่งเงินทุน: กรม xxxxxx (ปีงบประมาณ 2561)
+      </div>
+      <div>
+        ความคืบหน้า: 50%
+      </div>
+      <div>
+        คาดการณ์วันเสร็จสิ้น: 29/09/2561
+      </div>
+      <div class="status">
+        สถานะ: อยู่ระหว่างการทำงานวิจัย รอส่งรายงานความก้าวหน้า
+      </div>
+    </div>
+    <div class="research-action">
+      <button (click)="goToDetail('waitForProgress')" class="btn btn-primary">
+        ดูรายละเอียด
+      </button>
+      <button class="btn btn-primary" (click)="open(content, 'waitForProgress')">
+        รายงานความก้าวหน้า
+      </button>
+
+    </div>
+  </div>
+
+  <div class="current-research-row">
+    <div class="research-detail">
+      <h5>งานวิจัยพันธะเคมีแบบบีของสารเคมีเอเอเอในการรักษาโรคมะเร็ง</h5>
+      <div>
+        หน้าที่ในโครงการ: หัวหน้าโครงการ
+      </div>
+      <div>
+        แหล่งเงินทุน: กรม xxxxxx (ปีงบประมาณ 2561)
+      </div>
+      <div>
+        ความคืบหน้า: 0%
+      </div>
+      <div>
+        คาดการณ์วันเสร็จสิ้น: 29/09/2561
+      </div>
+      <div class="status">
+        สถานะ: รออนุมัติ
+      </div>
+    </div>
+    <div class="research-action">
+      <button class="btn btn-primary">
+        ดูรายละเอียด
+      </button>
+
+
+    </div>
+  </div>
+
+
+  <div class="current-research-row">
+    <div class="research-detail">
+      <h5>งานวิจัยพันธะเคมีแบบบีของสารเคมีเอเอเอในการรักษาโรคมะเร็ง</h5>
+      <div>
+        หน้าที่ในโครงการ: หัวหน้าโครงการ
+      </div>
+      <div>
+        แหล่งเงินทุน: กรม xxxxxx (ปีงบประมาณ 2561)
+      </div>
+      <div>
+        ความคืบหน้า: 50%
+      </div>
+      <div>
+        คาดการณ์วันเสร็จสิ้น: 29/09/2561
+      </div>
+      <div class="status">
+        สถานะ: รอส่งงานวิจัยฉบัยสมบูรณ์
+      </div>
+    </div>
+    <div class="research-action">
+      <button (click)="goToDetail('waitForProjectFinished')" class="btn btn-primary">
+        ดูรายละเอียด
+      </button>
+      <button class="btn btn-primary" (click)="open(content, 'waitForProjectFinished')">
+        ส่งงานวิจัยฉบัยสมบูรณ์
+      </button>
+
+    </div>
+  </div>
+
+
+  <div>
+
+  </div>
+
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">{{modalTitle}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="scroll-modal">
+      <div *ngIf="researchStatus == 'waitForProgress'">
+        <h5>Upload รายงานความก้าวหน้า</h5>
+        <app-upload-field label="รายงานความก้าวหน้า"></app-upload-field>
+        <h5>Upload เอกสารประกอบรายงานความก้าวหน้า</h5>
+        <app-upload-field label="รายงานความก้าวหน้า"></app-upload-field>
+        <br/>
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+        <br/>
+        <br/>
+        <h5>Upload เอกสารอื่น ๆ</h5>
+        <app-upload-field label="รายงานความก้าวหน้า"></app-upload-field>
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+      </div>
+      <div *ngIf="researchStatus == 'waitForProjectFinished'">
+        <h5>Upload ใบนำส่งงานวิจัย</h5>
+        <app-upload-field label="ใบนำส่งงานวิจัย"></app-upload-field>
+        <h5>Upload บทคัดย่องานวิจัย</h5>
+        <app-upload-field label="บทคัดย่องานวิจัย"></app-upload-field>
+        <h5>Upload งานวิจัยฉบับสมบูรณ์</h5>
+        <app-upload-field label="งานวิจัยฉบับสมบูรณ์"></app-upload-field>
+        <h5>Upload บทความวิชาการ</h5>
+        <app-upload-field label="บทความวิชาการ"></app-upload-field>
+        <h5>Upload รายงานการประชุมวิชาการ</h5>
+        <app-upload-field label="รายงานการประชุมวิชาการ"></app-upload-field>
+        <h5>Upload เอกสารอื่น ๆ</h5>
+        <app-upload-field label="เอกสารอื่น ๆ"></app-upload-field>
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
+      </div>
+      <!--<app-progress-manage [researchStatus]="researchStatus"></app-progress-manage>-->
+    </div>
+    <!--<app-progress-manage [researchStatus]="researchStatus"></app-progress-manage>-->
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c('Close click')">{{modalBtnAction}}</button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
+  </div>
+</ng-template>
+
+<ng-template #announcement let-aclose="close" let-adismiss="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">ประกาศทุนวิจัย</h4>
+    <button type="button" class="close" aria-label="Close" (click)="adismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body announce-body">
+    - รหัสทุนxxxx: ทุน bbbbbbb จากกระทรวง XXXXXXX<br>
+      &nbsp; &nbsp; ระยะเวลา: 8/11/2018 - 10/12/2018<br><br>
+    - รหัสทุนxxxx: ทุน xxxxxxx จากมหาวิทยาลัย YYYYYYY<br>
+    &nbsp; &nbsp; ระยะเวลา: 11/11/2018 - 12/12/2018<br><br>
+    - รหัสทุนxxxx: ทุน ccccccc จากมหาวิทยาลัย ZZZZZZZ<br>
+    &nbsp; &nbsp; ระยะเวลา: 11/11/2018 - 12/12/2018<br><br>
+    - รหัสทุนxxxx: ทุน lllllll จากสถาบัน LLLLLLL<br>
+    &nbsp; &nbsp; ระยะเวลา: 11/11/2018 - 12/12/2018<br><br>
+    
+    <!--<app-progress-manage [researchStatus]="researchStatus"></app-progress-manage>-->
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="aclose('Close click')">ปิด</button>
+  </div>
+</ng-template>

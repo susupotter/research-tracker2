@@ -1,0 +1,40 @@
+<form [formGroup]="forms">
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="top-padding"></div>
+        <div class="action-box">
+            <h3>ลงทะเบียนผู้ใช้</h3>
+            <h5>ข้อมูลส่วนตัว</h5>
+            <app-text-field label="ชื่อ-นามสกุล (ไทย)" formControlName="nameSurnameTH"></app-text-field>
+            <app-text-field label="ชื่อ-นามสกุล (English)" formControlName="nameSurnameEN"></app-text-field>
+            <app-text-field label="รหัสประจำตัวประชาชน / Passport No." formControlName="uniqueId"></app-text-field>
+            <app-radio-field label="เพศ" [valueList]="genderList" formControlName="gender" name="gender"></app-radio-field>
+            <app-text-field label="ที่อยู่" formControlName="address"></app-text-field>
+            <app-date-picker-field label="วัน เดือน ปีเกิด" formControlName="birthDate"></app-date-picker-field>
+            <app-radio-field label="ระดับการศึกษาสูงสุด" [valueList]="educationList" name="education" formControlName="education"></app-radio-field>
+            <app-selector-field label="หน่วยงานที่สังกัด" formControlName="sector" [valueList]="sectorTypes"></app-selector-field>
+
+            <h5>ข้อมูลผู้ใช้งาน</h5>
+            <app-radio-field label="ลงทะเบียนในฐานะ" [valueList]="roleList" formControlName="userType" name="userType"></app-radio-field>
+            <app-text-field label="Username" formControlName="username"></app-text-field>
+            <app-text-field label="Password" formControlName="password"></app-text-field>
+            <app-text-field label="Confirm Password" formControlName="confirmPassword"></app-text-field>
+            <app-text-field label="Email Address" formControlName="email"></app-text-field>
+            <br/>
+            <div class="researcher-panel" *ngIf="isResearcher">
+                <h5>ข้อมูลนักวิจัย</h5>
+
+                <app-radio-field label="สถานภาพทางการศึกษา" [valueList]="educationStatusList"></app-radio-field>
+                <app-text-field label="อาชีพ" formControlName="career"></app-text-field>
+                <app-text-field label="เลขที่ใบประกอบอาชีพ(ถ้ามี)" formControlName="careerCertificationId"></app-text-field>
+
+            </div>
+            <div class="button-panel">
+                <button class="btn btn-primary" (click)="onSubmit()">ลงทะเบียน</button>
+                <button class="btn" (click)="onClear()">ล้างข้อมูล</button>
+            </div>
+        </div>
+
+        <div class="bottom-padding"></div>
+    </div>
+</form>

@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <h4>รายงานจำนวนผู้เข้าสืบค้นผลงานวิจัยที่เผยแพร่แล้ว</h4>
+  
+    <div class="action-box">
+        <app-selector-field label="หน่วยงานที่สังกัด" ></app-selector-field>
+        <app-selector-field label="ประเภททุนวิจัย" ></app-selector-field>
+        <app-selector-field label="แหล่งทุนวิจัย" ></app-selector-field>
+        <app-selector-field label="ปีงบประมาณ" ></app-selector-field>
+        <app-selector-field label="รูปแบบที่เผยแพร่ผลงาน" [valueList]="publishingFormats"  ></app-selector-field>
+        <div class="button-panel">
+            <button class="btn btn-primary">ออกรายงาน</button>
+        </div>
+    </div>
+  
+  </div>

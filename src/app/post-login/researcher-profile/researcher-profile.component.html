@@ -1,0 +1,76 @@
+<div class="wrapper">
+  <div class="action-wrapper">
+    <h3>ประวัตินักวิจัย</h3>
+  </div>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item ">
+      <a class="nav-link" [ngClass]="currentTab=='general'?'active':''" (click)="onChangeTab('general')">ข้อมูลทั่วไป</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='education'?'active':''" (click)="onChangeTab('education')">การศึกษา</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='career'?'active':''" (click)="onChangeTab('career')">การทำงาน</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='training'?'active':''" (click)="onChangeTab('training')">การอบรม</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='proficiency'?'active':''" (click)="onChangeTab('proficiency')">ความเชี่ยวชาญ</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='publishedWork'?'active':''" (click)="onChangeTab('publishedWork')">ผลงานตีพิมพ์</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='implementedWork'?'active':''" (click)="onChangeTab('implementedWork')">ผลงานที่นำไปใช้ประโยชน์</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='patent'?'active':''" (click)="onChangeTab('patent')">สิทธิบัตร</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='awards'?'active':''" (click)="onChangeTab('awards')">รางวัล</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [ngClass]="currentTab=='researchProject'?'active':''" (click)="onChangeTab('researchProject')">งานวิจัย</a>
+      </li>
+    <!--<li class="nav-item">
+      <a class="nav-link" [ngClass]="currentTab=='researchProject'?'active':''" (click)="onChangeTab('researchProject')">งานวิจัย</a>
+    </li>-->
+  </ul>
+
+  <div class="action-box" *ngIf="currentTab == 'general'">
+    <app-general-info></app-general-info>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'education'">
+    <app-education></app-education>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'career'">
+    <app-career></app-career>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'training'">
+    <app-training></app-training>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'proficiency'">
+    <app-proficiency></app-proficiency>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'publishedWork'">
+    <app-published-works></app-published-works>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'implementedWork'">
+    <app-implemented-works></app-implemented-works>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'patent'">
+    <app-patent></app-patent>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'awards'">
+    <app-awards></app-awards>
+  </div>
+  <div class="action-box" *ngIf="currentTab == 'researchProject'">
+      <app-research-project></app-research-project>
+  </div>
+    
+
+
+
+</div>

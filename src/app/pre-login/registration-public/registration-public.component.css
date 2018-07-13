@@ -1,0 +1,42 @@
+.wrapper {
+    display:grid;
+    grid-template-rows: 60px 40px 460px auto 40px;
+    grid-template-columns: 1fr 800px 1fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    background-color:darkblue;
+}
+
+.top-padding {
+    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+    background-image: url('/assets/welcome.jpg')
+}
+
+.bottom-padding {
+    grid-column: 1 / 4;
+    grid-row: 4 / 6;
+}
+
+.action-box {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+    background-color:#FFFFFF;
+    z-index: 300;
+    border: #F0F0F0 solid 1px;
+    border-radius: 3px; 
+    padding:20px;
+}
+
+.button-panel {
+    margin-top:20px;
+}
+
+h5 {
+    margin-top:20px;
+}

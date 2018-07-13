@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <div class="action-wrapper">
+    <h3>ค้นหางานวิจัย</h3>
+  </div>
+  <div class="action-box">
+    <div class="search-box">
+      <app-selector-field label="ระบุเงื่อนไข" [horizontal]="true" [valueList]="valueList"></app-selector-field>
+      <app-text-field label="" placeholder="โปรดระบุคำค้นหา"></app-text-field>
+      <button class="btn btn-primary" (click)="isSearchClick=true">ค้นหา</button>
+    </div>
+    <div *ngIf="isSearchClick">
+      <div class="search-result">
+        <h4>งานวิจัยเรื่อง AAAAAAAAAA</h4>
+        บทคัดย่อ: เทอร์โบแฟร์ คณาญาติแจ็กพ็อตรีสอร์ท อิสรชน เยลลี่คอร์ป ง่าววาซาบิติงต๊องล็อตโบว์ลิ่ง
+        <br>
+        <a href="https://google.com">รายละเอียด</a>
+      </div>
+      <div class="search-result">
+        <h4>งานวิจัยเรื่อง BBBBBB</h4>
+        บทคัดย่อ: เทอร์โบแฟร์ คณาญาติแจ็กพ็อตรีสอร์ท อิสรชน เยลลี่คอร์ป ง่าววาซาบิติงต๊องล็อตโบว์ลิ่ง
+        <br>
+        <a href="https://google.com">รายละเอียด</a>
+      </div>
+      <div class="search-result">
+        <h4>งานวิจัยเรื่อง CCCCCCC</h4>
+        บทคัดย่อ: เทอร์โบแฟร์ คณาญาติแจ็กพ็อตรีสอร์ท อิสรชน เยลลี่คอร์ป ง่าววาซาบิติงต๊องล็อตโบว์ลิ่ง
+        <br>
+        <a href="https://google.com">รายละเอียด</a>
+      </div>
+      <div class="search-result last">
+        <h4>งานวิจัยเรื่อง DDDDDD</h4>
+        บทคัดย่อ: เทอร์โบแฟร์ คณาญาติแจ็กพ็อตรีสอร์ท อิสรชน เยลลี่คอร์ป ง่าววาซาบิติงต๊องล็อตโบว์ลิ่ง
+        <br>
+        <a href="https://google.com">รายละเอียด</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>

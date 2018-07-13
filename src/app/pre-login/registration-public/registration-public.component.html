@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="header"></div>
+  <div class="top-padding"></div>
+  <div class="action-box">
+    <h3>ลงทะเบียนผู้ใช้ทั่วไป</h3>
+    <h5>ข้อมูลส่วนตัว</h5>
+    <app-text-field label="ชื่อ-นามสกุล"></app-text-field>
+    <app-text-field label="รหัสประจำตัวประชาชน / Passport No."></app-text-field>
+    <app-radio-field label="เพศ" [valueList]="genderList"></app-radio-field>
+    <app-text-field label="ที่อยู่"></app-text-field>
+    <app-date-picker-field label="วัน เดือน ปีเกิด"></app-date-picker-field>
+    <app-radio-field label="ระดับการศึกษาสูงสุด" [valueList]="educationList"></app-radio-field>
+    <app-selector-field label="หน่วยงานที่สังกัด"></app-selector-field>
+    <app-text-field label="อาชีพ"></app-text-field>
+    <h5>ข้อมูลผู้ใช้งาน</h5>
+    <app-text-field label="Username"></app-text-field>
+    <app-text-field label="Password"></app-text-field>
+    <app-text-field label="Confirm Password"></app-text-field>
+    <app-text-field label="Email Address"></app-text-field>
+    <div class="button-panel">
+      <button class="btn btn-primary">ลงทะเบียน</button>
+      <button class="btn">ล้างข้อมูล</button>
+    </div>
+  </div>
+  <div class="bottom-padding"></div>
+</div>

@@ -1,0 +1,126 @@
+<div class="side-menu">
+    <ul *ngIf="role=='R'">
+        <li>
+            <a href="/app/post-login/researcher/profile">ประวัตินักวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/researcher">สถานะงานวิจัยปัจจุบัน</a>
+        </li>
+        <li><a href="/app/post-login/researcher/search">ค้นหางานวิจัยที่มีในระบบ</a></li>
+        <li>
+            <a href="/app/post-login/researcher/download">ดาวน์โหลดเอกสาร</a>
+        </li>
+    </ul>
+    <ul *ngIf="role=='O'">
+        <li class="separator">จัดการงานวิจัย</li>
+        <li>
+            <a href="/app/post-login/officer/researchFundManage">กำหนดรายละเอียดทุนวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/researchProposal">รายการข้อเสนองานวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/researchProgress">งานวิจัยที่กำลังดำเนินการ</a>
+        </li>
+        <li><a href="/app/post-login/officer/search">ค้นหางานวิจัยที่มีในระบบ</a></li>
+        <li class="separator">รายงานข้อมูลนักวิจัย</li>
+        <li>
+            <a href="/app/post-login/officer/report/researcher/profile">รายงานสรุปประวัตินักวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/report/researcher/project">รายงานสรุปผลงานวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/report/researcher/researcher">รายงานสรุปจำนวนนักวิจัย</a>
+        </li>
+        <li class="separator">รายงานข้อมูลโครงการวิจัย</li>
+        <li>
+            <a href="/app/post-login/officer/report/project/type">รายงานประเภทโครงการวิจัยที่เปิดรับข้อเสนอ</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/report/project/proposeResearcher">รายงานข้อมูลนักวิจัยที่ส่งข้อเสนอโครงการวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/report/project/approved">รายงานข้อมูลจำนวนโครงการวัจัยที่ได้รับอนุมัติทุนอุดหนุน</a>
+        </li>
+        <li class="separator">รายงานสรุปความก้าวหน้าการดำเนินการวิจัย</li>
+        <li>
+            <a href="/app/post-login/officer/report/progress/status">รายงานติดตามสถานะงานวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/report/progress/researcher">รายงานข้อมูลนักวิจัยที่ส่งรายงานความก้าวหน้า</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/report/progress/student">รายชื่อผู้ข้อทุนที่เป็นนักศึกษาและสถานะการรับทุน</a>
+        </li>
+        <li class="separator">รายงานสรุปงานวิจัยที่เสร็จสิ้นแล้ว</li>
+        <li>
+            <a href="/app/post-login/officer/report/final/project">รายงานงานวิจัยฉบับสมบูรณ์และการส่งงานวิจัยรายบุคคล</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/report/final/researcher">รายงานข้อมูลนักวิจัยที่ส่งงานวิจัยฉบับสมบูรณ์</a>
+        </li>
+        <li>
+            <a href="/app/post-login/officer/report/final/publishingFormat">รายงานจำนวนนักวิจัยส่งรายงานวิจัยฉบับสมบูรณ์แยกตามรูปแบบเผยแพร่</a>
+        </li>
+        <li class="separator">รายงานติดตามการเบิกจ่ายทุนวิจัย</li>
+        <li>
+            <a href="/app/post-login/officer/report/others/payment">รายงานจำนวนนักวิจัยที่ทำการเบิกจ่ายรายงวด</a>
+        </li>
+        <li class="separator">รายงานสรุปการสืบค้นงานวิจัยที่เผยแพร่แล้ว</li>
+        <li>
+            <a href="/app/post-login/officer/report/others/searchStat">รายงานจำนวนผู้เข้าสืบค้นผลงานวิจัยที่เผยแพร่แล้ว</a>
+        </li>
+        <li class="separator">ระบบแผนยุทธศาสตร์ประกันคุณภาพ</li>
+    </ul>
+    <ul *ngIf="role=='A'">
+        <li class="separator">จัดการผู้ใช้</li>
+        <li>
+            <a href="/app/post-login/admin/user/listUser">รายชื่อผู้ใช้</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/user/roleSetting">กำหนดสิทธิผู้ใช้</a>
+        </li>
+        <li class="separator">ตั้งค่าข้อมูลนักวิจัย</li>
+        <li>
+            <a href="/app/post-login/admin/setting/researcherType">ประเภทนักวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/setting/sectorType">หน่วยงานที่สังกัด</a>
+        </li>
+        <li class="separator">ตั้งค่าข้อมูลงานวิจัย</li>
+        <!--<li>
+            <a href="/app/post-login/admin/setting/researchType">ประเภทงบประมาณทุนวิจัย</a>
+        </li>-->
+        <li>
+            <a href="/app/post-login/admin/setting/researchType">รูปแบบงานวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/setting/researchFundType">ประเภททุนวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/setting/researchFundBudgetType">ประเภทงบประมาณทุนวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/setting/researchFundSourceType">ประเภทแหล่งทุนวิจัย</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/setting/relatedSubject">สาขาวิชาที่เกี่ยวข้อง</a>
+        </li>
+        <li class="separator">ตั้งค่าข้อมูลยุทธศาสตร์</li>
+        <li>
+            <a href="/app/post-login/admin/setting/fundYear">ปีงบประมาณ</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/setting/strategyType">ประเภทยุทธศาสตร์</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/setting/strategy">ยุทธศาสตร์</a>
+        </li>
+        <li>
+            <a href="/app/post-login/admin/setting/objective">เป้าประสงค์</a>
+        </li>
+        <li>ประเด็นยุทธศาสตร์</li>
+        <li>แผนงาน</li>
+    </ul>
+</div>

@@ -1,0 +1,39 @@
+<div *ngIf="researchStatus == 'firstPayment'">
+  <app-date-picker-field label="วันที่ทำสัญญาให้ทุน"></app-date-picker-field>
+</div>
+
+<div *ngIf="researchStatus == 'waitForProgress'">
+  <app-date-picker-field label="วันที่ส่งเบิกงวดที่ 1"></app-date-picker-field>
+</div>
+
+<div *ngIf="researchStatus == 'secondPayment'">
+  <app-date-picker-field label="วันที่ได้รับรายงานความก้าวหน้าโครงการ"></app-date-picker-field>
+</div>
+
+<div *ngIf="researchStatus == 'waitForProjectFinished'">
+  <app-date-picker-field label="วันที่อนุมัติรายงานและส่งเบิกงวดที่ 2"></app-date-picker-field>
+</div>
+
+<div *ngIf="researchStatus == 'projectFinished'">
+  <app-date-picker-field label="วันที่ได้รับงานวิจัยฉบับสมบูรณ์"></app-date-picker-field>
+  <app-date-picker-field label="วันที่อนุมัติงานวิจัยฉบับสมบูรณ์และส่งเบิกงวดที่ 3"></app-date-picker-field>
+  <app-date-picker-field label="วันที่ได้รับมอบ CD"></app-date-picker-field>
+  <app-date-picker-field label="วันที่ได้ทำการเผยแพร่งานวิจัยครั้งแรก"></app-date-picker-field>
+
+  <app-text-field label="มีผลผลิตจากงานวิจัยในรูปแบบอื่น"></app-text-field>
+</div>
+
+<div *ngIf="researchStatus == 'finished'">
+  <app-date-picker-field label="วันที่อนุมัติรายงานและส่งเบิกงวดที่ 3"></app-date-picker-field>
+</div>
+
+<div *ngIf="researchStatus == 'rejectContract'">
+  <app-date-picker-field label="วันที่ยกเลิกทุน"></app-date-picker-field>
+  <app-text-area-field label="เหตุผล"></app-text-area-field>
+</div>
+<div *ngIf="researchStatus == 'others'">
+
+
+
+
+</div>

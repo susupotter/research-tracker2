@@ -1,0 +1,30 @@
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+
+}
+
+.action-box {
+    background-color:#FFFFFF;
+    border: #F0F0F0 solid 1px;
+    border-radius: 3px; 
+    padding:20px;
+
+    margin-bottom: 20px
+}
+
+.separator {
+    height: 30px;
+}
+
+.scroll-modal {
+    height: 60vh;
+    overflow: auto;
+}
+
+.btn-panel {
+    display: grid;
+    grid-template-columns: minmax(120px,auto) minmax(120px,auto);
+    grid-gap: 10px;
+}

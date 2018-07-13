@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <h3>ตั้งค่า{{settingDisplay.title}}</h3>
+    <div class="action-box">
+        <div class="table-form-wrapper">
+            <table *ngIf="fundYears.length > 0" class="table">
+                <thead>
+                    <td width="60%">{{settingDisplay.title}}</td>
+                    <td width="40%"></td>
+                </thead>
+                <tr *ngFor="let fundYear of fundYears">
+                    <!--<td>
+                      <input type="text" class="form-control" readonly="true" [value]="researcherType.id"/>
+                  </td>-->
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="fundYear.year" readonly />
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" >
+                            <i class="fas fa-trash-alt"></i> ลบทิ้ง
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="button-panel-table">
+            <input type="text" class="form-control" [(ngModel)]="addValue" />
+            <button class="btn btn-primary" (click)="saveType(addValue)">
+                <i class="fas fa-plus"></i>&nbsp; เพิ่ม{{settingDisplay.title}}</button>
+        </div>
+
+    </div>
+</div>
