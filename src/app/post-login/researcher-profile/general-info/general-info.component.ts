@@ -11,7 +11,7 @@ export class GeneralInfoComponent implements OnInit {
 
   public forms: FormGroup;
   public genderList: RadioValue[] = [{ label: "ชาย", value: "M" }, { label: "หญิง", value: "F" }];
-
+  public educationList: RadioValue[] = [{ label: "ต่ำกว่าปริญญาตรี", value: "N" }, { label: "ปริญญาตรี", value: "B" }, { label: "ปริญญาโท", value: "M" }, { label: "ปริญญาเอก", value: "D" }];
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
