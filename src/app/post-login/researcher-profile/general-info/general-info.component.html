@@ -6,4 +6,9 @@
     <app-radio-field label="ระดับการศึกษาสูงสุด" [valueList]="educationList" name="education" formControlName="education"></app-radio-field>
     <app-selector-field label="หน่วยงานที่สังกัด" formControlName="sector" [valueList]="sectorTypes"></app-selector-field>
     <app-text-field label="Email Address" formControlName="email"></app-text-field>
+
+    <div class="button-panel">
+        <button class="btn btn-primary">บันทึก</button>
+        <button class="btn">ล้างข้อมูล</button>
+    </div>
 </form>
