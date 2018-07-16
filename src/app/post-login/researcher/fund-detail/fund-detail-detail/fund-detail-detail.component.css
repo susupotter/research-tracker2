@@ -1,0 +1,16 @@
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+
+.fund-detail {
+    padding: 20px;
+    border-bottom: 1px;
+    border-bottom-color: lightgray;
+    border-bottom-style: solid;
+}
+
+.data {
+    padding-top: 10px;
+}

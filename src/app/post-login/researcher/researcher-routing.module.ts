@@ -10,6 +10,8 @@ import { CreatePortfolioComponent } from "./researcher-portfolio/create-portfoli
 import { ProfileComponent } from "./profile/profile.component";
 import { SubmitFinalComponent } from "./update-progress/submit-final/submit-final.component";
 import { SearchResearchComponent } from "../search-research/search-research.component";
+import { FundDetailComponent } from "./fund-detail/fund-detail.component";
+import { FundDetailDetailComponent } from "./fund-detail/fund-detail-detail/fund-detail-detail.component";
 
 const routes: Routes = [
     { path: '', component: DashboardComponent, children: [
@@ -24,6 +26,8 @@ const routes: Routes = [
       { path: 'portfolio', component: ResearcherPortfolioComponent },
       { path: 'portfolio/create/:portType', component: CreatePortfolioComponent },
       { path: 'search', component: SearchResearchComponent },
+      { path: 'fundDetail', component: FundDetailComponent },
+      { path: 'fundDetail/:fundId', component: FundDetailDetailComponent },
 ];
 
 @NgModule({

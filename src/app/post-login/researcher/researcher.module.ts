@@ -19,6 +19,8 @@ import { ResearcherProfileModule } from "../researcher-profile/researcher-profil
 import { APIServiceModule } from "../../api-service/api.service.module";
 import { SubmitFinalComponent } from './update-progress/submit-final/submit-final.component';
 import { SearchResearchModule } from "../search-research/search-research.module";
+import { FundDetailComponent } from './fund-detail/fund-detail.component';
+import { FundDetailDetailComponent } from './fund-detail/fund-detail-detail/fund-detail-detail.component';
 
 @NgModule({
     imports: [
@@ -35,6 +37,6 @@ import { SearchResearchModule } from "../search-research/search-research.module"
       APIServiceModule,
       SearchResearchModule
     ],
-    declarations: [ResearcherComponent, DashboardComponent, ResearchProposalComponent, UpdateProgressComponent, DownloadFilesComponent, ResearcherPortfolioComponent, CreatePortfolioComponent, ProfileComponent, SubmitFinalComponent]
+    declarations: [ResearcherComponent, DashboardComponent, ResearchProposalComponent, UpdateProgressComponent, DownloadFilesComponent, ResearcherPortfolioComponent, CreatePortfolioComponent, ProfileComponent, SubmitFinalComponent, FundDetailComponent, FundDetailDetailComponent]
   })
   export class ResearcherModule { }
