@@ -12,3 +12,10 @@ export class AuthGuardService implements CanActivate {
     return true;
   }
 }
+
+/*curl -i -H "Content-Type: application/json" -X POST -d '{
+    "username": "dd",
+    "password": "dddd"
+}' http://localhost:8080/login
+
+*/

@@ -36,15 +36,13 @@ export class RegistrationComponent implements OnInit {
       address: new FormControl(''),
       birthDate: new FormControl(''),
       education: new FormControl(''),
+      userTypeId: new FormControl(''),
       userType: new FormControl(''),
       sector: new FormControl(''),
       username: new FormControl(''),
       password: new FormControl(''),
       confirmPassword: new FormControl(''),
-      email: new FormControl(''),
-      wasGraduated: new FormControl(''),
-      career: new FormControl(''),
-      careerCertificationId: new FormControl(''),
+      email: new FormControl('')
     })
 
     this.forms.controls['userType'].valueChanges.subscribe(value => {
@@ -66,34 +64,19 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.isResearcher) {
-      this.registerResearcher()
-    } else {
-      this.registerNormal()
-    }
+      this.register();
   }
 
   onClear() {
     this.forms.reset();
   }
 
-  registerNormal() {
+  register() {
     console.log(this.forms.getRawValue())
-    this.registerService.saveNormalUser(this.forms.getRawValue()).subscribe(res => {
+    this.registerService.register(this.forms.getRawValue()).subscribe(res => {
       alert("Success")
     }, error => {
-      alert("Error")
-    })
-  }
-
-  registerResearcher() {
-    console.log(this.forms.getRawValue())
-    this.registerService.saveResearcher(this.forms.getRawValue()).subscribe(res => {
-      alert("Success")
-      this.goBackToLogin()
-      
-    }, error => {
-      alert("Error")
+      alert(error.error)
     })
   }
 

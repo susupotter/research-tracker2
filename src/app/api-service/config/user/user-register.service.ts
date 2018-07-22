@@ -9,12 +9,16 @@ export class UserRegisterService extends BaseApiService {
         super(http)
     }
 
+    register(user) {
+        return this.http.post<String>(this.host + "/api/register", user);
+    }
+
     saveNormalUser(normalUser) {
-        return this.http.post<String>(this.host + "/api/register/normalUser", normalUser);
+        return this.http.post<String>(this.host + "/api/register", normalUser);
     }
 
     saveResearcher(researcher) {
-        return this.http.post<String>(this.host + "/api/register/researcher", researcher);
+        return this.http.post<String>(this.host + "/api/register", researcher);
     }
 
 }

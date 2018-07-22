@@ -3,11 +3,10 @@ import { BaseApiService } from '../../base-api.service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class SectorTypeService {
-
-    host: String = "http://localhost:8080";
+export class SectorTypeService extends BaseApiService {
 
     constructor(private http: HttpClient) {
+        super(http)
     }
 
     getList() {
