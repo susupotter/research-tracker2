@@ -11,16 +11,16 @@
       </thead>
       <tr *ngFor="let user of userList">
         <td>
-          {{user.username}}
+          {{user.user.username}}
         </td>
         <td>
           {{user.uniqueId}}
         </td>
         <td>
-          {{user.nameSurname}}
+          {{user.nameSurnameEN}}
         </td>
         <td>
-          {{user.userType | userTypeShow}}
+          {{user.userType.type}}
         </td>
         <td>
           <button class="btn btn-primary">

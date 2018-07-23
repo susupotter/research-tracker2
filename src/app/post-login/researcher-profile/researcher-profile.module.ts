@@ -13,13 +13,15 @@ import { TrainingComponent } from "./training/training.component";
 import { PatentComponent } from "./patent/patent.component";
 import { ComponentModule } from "../../component/component.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { APIServiceModule } from "../../api-service/api.service.module";
 
 @NgModule({
   imports: [
     CommonModule,
     ComponentModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    APIServiceModule
   ],
   declarations: [
     ResearcherProfileComponent,

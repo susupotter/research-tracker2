@@ -17,21 +17,21 @@
             <td></td>
             <td></td>
         </thead>
-        <tr>
+        <tr *ngFor="let career of careerList" >
           <td>
-            20/01/2009
+            {{career.startDate}}
           </td>
           <td>
-            -
+            {{career.endDate}}
           </td>
           <td>
-            xxxxxxxx
+            {{career.organizationName}}
           </td>
           <td>
-            vvvvvv
+            {{career.position}}
           </td>
           <td>
-            <button type="button" class="btn btn-primary">แก้ไข</button>
+            <button type="button" class="btn btn-primary" (click)="open(content, career.id)">แก้ไข</button>
           </td>
           <td>
             <button type="button" class="btn btn-primary">ลบ</button>
@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" (click)="c('Close click')">บันทึก</button>
+          <button type="button" class="btn btn-primary" (click)="saveCareer()">บันทึก</button>
           <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
         </div>
       </ng-template>

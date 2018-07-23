@@ -12,6 +12,8 @@ import { UserRegisterService } from "./config/user/user-register.service";
 import { StrategySettingService } from "./config/research/strategy-setting-service";
 import { UserDataService } from "./config/user/user-data.service";
 import { FundBudgetTypeService } from "./config/research/fund-budget-type.service";
+import { EducationService } from "./user/data/education.service";
+import { CareerService } from "./user/data/career.service";
 
 @NgModule({
     imports: [CommonModule, HttpClientModule,
@@ -26,6 +28,8 @@ import { FundBudgetTypeService } from "./config/research/fund-budget-type.servic
         , ResearchTypeService, FundTypeService,
         FundSourceTypeService, RelatedSubjectService,
         UserRegisterService, StrategySettingService,
-        UserDataService, FundBudgetTypeService]
+        UserDataService, FundBudgetTypeService,
+        EducationService, CareerService
+        ]
 })
 export class APIServiceModule { }

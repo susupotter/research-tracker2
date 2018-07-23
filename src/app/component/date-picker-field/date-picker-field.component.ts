@@ -6,7 +6,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 
 import * as _moment from 'moment';
 // tslint:disable-next-line:no-duplicate-imports
-import {defaultFormat as _rollupMoment} from 'moment';
+import { defaultFormat as _rollupMoment } from 'moment';
 
 const moment = _rollupMoment || _moment;
 
@@ -60,8 +60,14 @@ export class DatePickerFieldComponent implements OnInit, ControlValueAccessor {
 
   writeValue(obj: any): void {
     console.log(obj)
-    this.value = obj;
-    this.change(obj);
+    var momentValue: _moment.Moment;
+
+    if (obj && typeof obj === 'string') {
+      momentValue = _moment(obj, "DD/MM/YYYY");
+    }
+    this.value = momentValue;
+    this.change(momentValue);
+
   }
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -74,19 +80,12 @@ export class DatePickerFieldComponent implements OnInit, ControlValueAccessor {
   }
 
   change(value: _moment.Moment) {
-    console.log(value)
-    if(value){
+    if (value) {
       var dateStr = value.format("DD/MM/YYYY");
       this.onChange(dateStr);
+    } else {
+      this.onChange('');
     }
-    /*if (value && value instanceof Date) {
-      //this.value = this.parseDate(value);
-      var dateStr = formatDate(value, "dd/MM/yyyy", "en-US");
-      this.onChange(dateStr);
-    } else if (value) {
-      this.value = this.parseDate(value);
-      this.onChange(value);
-    }*/
 
   }
 

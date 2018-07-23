@@ -18,6 +18,19 @@ export class UserDataService extends BaseApiService {
 export interface UserData {
     username: String;
     uniqueId: String;
+    nameSurnameTH: String;
+    nameSurnameEN: String;
+    userType: UserType;
+    user: User;
+}
+
+export interface User {
+    username: String;
+    uniqueId: String;
     nameSurname: String;
-    userType: String;
+}
+
+export interface UserType {
+    typeId: String;
+    type: String;
 }

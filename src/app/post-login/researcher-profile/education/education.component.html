@@ -17,21 +17,21 @@
         <td></td>
         <td></td>
       </thead>
-      <tr>
+      <tr *ngFor="let education of educationList">
         <td>
-          xxxxxx
+          {{education.instituteName}}
         </td>
         <td>
-          yyyyyyy
+          {{education.degreeName}}
         </td>
         <td>
-          llllll
+          {{education.subject}}
         </td>
         <td>
-          2555
+          {{education.graduateYear}}
         </td>
         <td>
-          <button type="button" class="btn btn-primary">แก้ไข</button>
+          <button type="button" class="btn btn-primary" (click)="open(content, education.id)">แก้ไข</button>
         </td>
         <td>
           <button type="button" class="btn btn-primary">ลบ</button>
@@ -56,13 +56,11 @@
             <app-text-field label="ชื่อปริญญา" formControlName="degreeName"></app-text-field>
             <app-text-field label="สาขา" formControlName="subject"></app-text-field>
             <app-text-field label="ปีที่จบการศึกษา" formControlName="graduateYear"></app-text-field>
-
-
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="c('Close click')">บันทึก</button>
+        <button type="button" class="btn btn-primary" (click)="saveEducation()">บันทึก</button>
         <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
       </div>
     </ng-template>
