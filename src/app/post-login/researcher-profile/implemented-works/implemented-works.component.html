@@ -16,18 +16,18 @@
         <td></td>
         <td></td>
       </thead>
-      <tr>
+      <tr *ngFor="let work of workList">
         <td>
-          xxxxxx
+          {{work.year}}
         </td>
         <td>
-          yyyyyy
+          {{work.name}}
         </td>
         <td>
-          zzzzzz
+          {{work.implementation}}
         </td>
         <td>
-          <button type="button" class="btn btn-primary">แก้ไข</button>
+          <button type="button" class="btn btn-primary" (click)="open(content, work.id)">แก้ไข</button>
         </td>
         <td>
           <button type="button" class="btn btn-primary">ลบ</button>
@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="c('Close click')">บันทึก</button>
+        <button type="button" class="btn btn-primary" (click)="saveImplementedWork()">บันทึก</button>
         <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
       </div>
     </ng-template>

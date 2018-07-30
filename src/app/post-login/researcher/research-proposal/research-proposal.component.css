@@ -7,6 +7,9 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.action-wrapper{
+    grid-column: 1 / 3;
+}
 
 .action-box {
     grid-column: 1 / 3;

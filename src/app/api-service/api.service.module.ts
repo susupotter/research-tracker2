@@ -14,6 +14,10 @@ import { UserDataService } from "./config/user/user-data.service";
 import { FundBudgetTypeService } from "./config/research/fund-budget-type.service";
 import { EducationService } from "./user/data/education.service";
 import { CareerService } from "./user/data/career.service";
+import { TrainingService } from "./user/data/training.service";
+import { ImplementedWorkService } from "./user/data/implemented-work.service";
+import { PatentService } from "./user/data/patent.service";
+import { UploadFileService } from "./upload-file.service";
 
 @NgModule({
     imports: [CommonModule, HttpClientModule,
@@ -29,7 +33,8 @@ import { CareerService } from "./user/data/career.service";
         FundSourceTypeService, RelatedSubjectService,
         UserRegisterService, StrategySettingService,
         UserDataService, FundBudgetTypeService,
-        EducationService, CareerService
+        EducationService, CareerService, TrainingService,
+        ImplementedWorkService, PatentService, UploadFileService
         ]
 })
 export class APIServiceModule { }

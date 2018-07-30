@@ -3,13 +3,15 @@ import { ResearchDetailComponent } from "./research-detail.component";
 import { ComponentModule } from "../../component/component.module";
 import { TagInputModule } from "ngx-chips";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     imports: [
       ComponentModule,
       TagInputModule,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      CommonModule
     ],
     declarations: [ResearchDetailComponent],
     exports:[ResearchDetailComponent]

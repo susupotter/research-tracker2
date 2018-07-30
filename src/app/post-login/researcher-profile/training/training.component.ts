@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { Training, TrainingService } from '../../../api-service/user/data/training.service';
 
 @Component({
   selector: 'app-training',
@@ -13,7 +14,13 @@ export class TrainingComponent implements OnInit {
   modalTitle = "เพิ่ม / แก้ไขการอบรม"
   public closeResult: string;
 
-  constructor(private modalService: NgbModal,private formBuilder: FormBuilder) { }
+  public modalRef: NgbModalRef;
+
+  public trainingList: Training[];
+
+  public selected: Training;
+
+  constructor(private modalService: NgbModal,private formBuilder: FormBuilder, private trainingService: TrainingService) { }
 
   ngOnInit() {
     this.forms = this.formBuilder.group({
@@ -24,15 +31,36 @@ export class TrainingComponent implements OnInit {
       place: '',
       details: ''
     });
+
+    this.list();
   }
 
-  open(content) {
+  open(content, id?:String) {
 
-    this.modalService.open(content, { backdropClass: 'light-blue-backdrop' }).result.then((result) => {
+    if(id){
+      this.getTraining(id);
+    } else {
+      if(this.forms.controls['id']){
+        this.forms.removeControl('id');
+      }
+      this.forms.reset()
+    }
+    this.modalRef = this.modalService.open(content, { backdropClass: 'light-blue-backdrop' });
+    this.modalRef.result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+
+  }
+
+  getTraining(id: String){
+    this.trainingService.getTraining("uuu8888", id).subscribe( value => {
+      this.selected = value;
+      this.forms.addControl("id", new FormControl(""));
+      this.forms.patchValue(this.selected);
+      
+    })
   }
 
   private getDismissReason(reason: any): string {
@@ -43,6 +71,25 @@ export class TrainingComponent implements OnInit {
     } else {
       return  `with: ${reason}`;
     }
+  }
+
+  list() {
+    this.trainingService.getList("uuu8888").subscribe(list => {
+      this.trainingList = list;
+    }, error => {
+      alert(error.error)
+    })
+  }
+
+  saveTraining(){
+    console.log(this.forms.getRawValue());
+    this.trainingService.saveTraining("uuu8888" ,this.forms.getRawValue()).subscribe(res => {
+      alert("Success")
+      this.modalRef.close();
+      this.list();
+    }, error => {
+      alert(error.error)
+    })
   }
 
 }

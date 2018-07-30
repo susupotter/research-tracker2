@@ -1,4 +1,4 @@
-<form [formGroup]="forms">
+<form [formGroup]="forms" enctype='multipart/form-data'>
   <div class="table-form-wrapper">
     <h4>สิทธิบัตร</h4>
     <br>
@@ -17,21 +17,21 @@
         <td></td>
         <td></td>
       </thead>
-      <tr>
+      <tr *ngFor="let patent of patentList">
         <td>
-          xxxxx
+          {{patent.type}}
         </td>
         <td>
-          yyyyyy
+          {{patent.name}}
         </td>
         <td>
-          zzzzzz
+          {{patent.patentNo}}
         </td>
         <td>
-          uuuuuu
+          {{patent.requestNo}}
         </td>
         <td>
-          <button type="button" class="btn btn-primary">แก้ไข</button>
+          <button type="button" class="btn btn-primary" (click)="open(content, patent.id)">แก้ไข</button>
         </td>
         <td>
           <button type="button" class="btn btn-primary">ลบ</button>
@@ -63,8 +63,10 @@
             <br>
             <div class="form-wrapper">
               <h5>Upload เอกสารแนบ</h5>
-              <app-upload-field label="ไฟล์สกุล PDF หรือ ZIP"></app-upload-field>
-              <button class="btn btn-primary">
+              <div formArrayName="files" *ngFor="let item of forms.get('files').controls; let i = index;">
+                <app-upload-field label="ไฟล์สกุล PDF หรือ ZIP" (change)="onFileChange($event, i)"></app-upload-field>
+              </div>
+              <button class="btn btn-primary" (click)="addItem()">
                 <i class="fas fa-plus"></i>&nbsp; เพิ่มไฟล์</button>
             </div>
             <br>
@@ -73,7 +75,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="c('Close click')">บันทึก</button>
+        <button type="button" class="btn btn-primary" (click)="savePatent()">บันทึก</button>
         <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
       </div>
     </ng-template>

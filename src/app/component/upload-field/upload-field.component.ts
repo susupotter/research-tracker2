@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadFieldComponent implements OnInit {
 
+  fileName: String;
+
   constructor() { }
 
   ngOnInit() {

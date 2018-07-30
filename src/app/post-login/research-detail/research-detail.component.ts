@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RadioValue } from '../../component/radio-field/radio-value';
 
 @Component({
@@ -7,6 +7,8 @@ import { RadioValue } from '../../component/radio-field/radio-value';
   styleUrls: ['./research-detail.component.css']
 })
 export class ResearchDetailComponent implements OnInit {
+
+  @Input('isProposal') isProposal: boolean;
 
   public researchPlaceType: RadioValue[] = [{label: "ห้องปฏิบัติการ", value: "T"}, {label: "ภาคสนาม", value: "P"},{label: "สำนักงาน", value: "S"}]
   public YesOrNo: RadioValue[] = [{label: "ได้", value: "Y"}, {label: "ไม่ได้", value: "N"}]
