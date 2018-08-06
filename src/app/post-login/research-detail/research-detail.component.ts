@@ -4,7 +4,7 @@ import { RadioValue } from '../../component/radio-field/radio-value';
 @Component({
   selector: 'app-research-detail',
   templateUrl: './research-detail.component.html',
-  styleUrls: ['./research-detail.component.css']
+  styleUrls: ['./research-detail.component.css', '../../style/form-style.css']
 })
 export class ResearchDetailComponent implements OnInit {
 

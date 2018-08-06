@@ -5,7 +5,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-create-portfolio',
   templateUrl: './create-portfolio.component.html',
-  styleUrls: ['./create-portfolio.component.css']
+  styleUrls: ['./create-portfolio.component.css', '../../../../style/form-style.css']
 })
 export class CreatePortfolioComponent implements OnInit {
 

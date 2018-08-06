@@ -7,7 +7,7 @@ import { SelectorValue } from '../../../component/selector-field/selector-field.
 @Component({
   selector: 'app-research-proposal',
   templateUrl: './research-proposal.component.html',
-  styleUrls: ['./research-proposal.component.css']
+  styleUrls: ['./research-proposal.component.css', '../../../style/form-style.css']
 })
 export class ResearchProposalComponent implements OnInit {
 

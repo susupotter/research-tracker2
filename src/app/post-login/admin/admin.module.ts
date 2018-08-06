@@ -23,6 +23,8 @@ import { ObjectiveSettingComponent } from './manage-strategy-setting/objective-s
 import { IssueSettingComponent } from './manage-strategy-setting/issue-setting/issue-setting.component';
 import { RoleSettingComponent } from './manage-user/role-setting/role-setting.component';
 import { FundBudgetTypeComponent } from './manage-researcher-setting/fund-budget-type/fund-budget-type.component';
+import { OrganizationSettingComponent } from './manage-strategy-setting/organization-setting/organization-setting.component';
+import { PlanSettingComponent } from './manage-strategy-setting/plan-setting/plan-setting.component';
 
 @NgModule({
     imports: [
@@ -33,6 +35,6 @@ import { FundBudgetTypeComponent } from './manage-researcher-setting/fund-budget
       ComponentModule,
       PipeModule
     ],
-    declarations: [AdminComponent, ManageUserComponent, ManageStrategySettingComponent, ManageResearcherSettingComponent,ResearcherTypeSettingComponent, SectorTypeSettingComponent, ResearchTypeSettingComponent, FundTypeSettingComponent, FundSourceTypeSettingComponent, RelatedSubjectSettingComponent, FundYearSettingComponent, StrategyTypeSettingComponent, StrategySettingComponent, ListUserComponent, ObjectiveSettingComponent, IssueSettingComponent, RoleSettingComponent, FundBudgetTypeComponent]
+    declarations: [AdminComponent, ManageUserComponent, ManageStrategySettingComponent, ManageResearcherSettingComponent,ResearcherTypeSettingComponent, SectorTypeSettingComponent, ResearchTypeSettingComponent, FundTypeSettingComponent, FundSourceTypeSettingComponent, RelatedSubjectSettingComponent, FundYearSettingComponent, StrategyTypeSettingComponent, StrategySettingComponent, ListUserComponent, ObjectiveSettingComponent, IssueSettingComponent, RoleSettingComponent, FundBudgetTypeComponent, OrganizationSettingComponent, PlanSettingComponent]
   })
   export class AdminModule { }

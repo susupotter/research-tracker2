@@ -15,6 +15,9 @@ import { ListUserComponent } from "./manage-user/list-user/list-user.component";
 import { ObjectiveSettingComponent } from "./manage-strategy-setting/objective-setting/objective-setting.component";
 import { RoleSettingComponent } from "./manage-user/role-setting/role-setting.component";
 import { FundBudgetTypeComponent } from "./manage-researcher-setting/fund-budget-type/fund-budget-type.component";
+import { OrganizationSettingComponent } from "./manage-strategy-setting/organization-setting/organization-setting.component";
+import { PlanSettingComponent } from "./manage-strategy-setting/plan-setting/plan-setting.component";
+import { IssueSettingComponent} from "./manage-strategy-setting/issue-setting/issue-setting.component";
 
 const routes: Routes = [
     { path: '', component: AdminComponent, children: [
@@ -36,7 +39,10 @@ const routes: Routes = [
       {path:'setting/fundYear', component:FundYearSettingComponent},
       {path:'setting/strategyType', component:StrategyTypeSettingComponent},
       {path:'setting/strategy', component:StrategySettingComponent},
+      {path:'setting/organization', component:OrganizationSettingComponent},
+      {path:'setting/plan', component:PlanSettingComponent},
       {path:'setting/objective', component:ObjectiveSettingComponent},
+      {path:'setting/issue', component:IssueSettingComponent},
 
 ];
 

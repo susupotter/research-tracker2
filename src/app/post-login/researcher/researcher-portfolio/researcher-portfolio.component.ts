@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-researcher-portfolio',
   templateUrl: './researcher-portfolio.component.html',
-  styleUrls: ['./researcher-portfolio.component.css']
+  styleUrls: ['./researcher-portfolio.component.css', '../../../style/form-style.css']
 })
 export class ResearcherPortfolioComponent implements OnInit {
 

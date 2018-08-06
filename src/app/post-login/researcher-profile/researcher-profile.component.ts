@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-researcher-profile',
   templateUrl: './researcher-profile.component.html',
-  styleUrls: ['./researcher-profile.component.css']
+  styleUrls: ['./researcher-profile.component.css', '../../style/form-style.css']
 })
 export class ResearcherProfileComponent implements OnInit {
 

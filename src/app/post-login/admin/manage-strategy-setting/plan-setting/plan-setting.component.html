@@ -8,28 +8,45 @@
               <option *ngFor="let v of fundYears" [value]="v.id">{{v.year}}</option>
           </select>
       </div>
-      <!--<div class="button-panel-table">
+      <!--<div><br/></div>
+      <div class="button-panel-table">
         <label for="stragtegyTypeId">ประเภทยุทธศาสตร์</label>
           <select class="form-control" id="stragtegyTypeId" [disabled]="disabled" [(ngModel)]="strategyTypeId" (ngModelChange)="onChangeStrategyType($event)" >
               <option></option>
               <option *ngFor="let v of stragtegyTypes" [value]="v.id">{{v.strategyType}}</option>
           </select>
       </div>-->
+      <div><br/></div>
+      <div class="button-panel-table">
+        <label for="stragtegyId">ยุทธศาสตร์</label>
+          <select class="form-control" id="stragtegyId" [disabled]="disabled" [(ngModel)]="strategyId" (ngModelChange)="onChangeStrategy($event)" >
+              <option></option>
+              <option *ngFor="let v of stragtegies" [value]="v.id">{{v.strategy}}</option>
+          </select>
+      </div>
+      <div><br/></div>
+      <div class="button-panel-table">
+        <label for="stragtegyId">หน่วยงาน</label>
+          <select class="form-control" id="stragtegyId" [disabled]="disabled" [(ngModel)]="strategyId" (ngModelChange)="onChangeStrategy($event)" >
+              <option></option>
+              <option *ngFor="let v of stragtegies" [value]="v.id">{{v.strategy}}</option>
+          </select>
+      </div>
       <div class="table-form-wrapper">
           <table *ngIf="stragtegies.length > 0" class="table">
               <thead>
                   <td width="60%">{{settingDisplay.title}}</td>
                   <td width="40%"></td>
               </thead>
-              <tr *ngFor="let strategy of stragtegies">
+              <tr *ngFor="let objective of objectives">
                   <td>
-                    <input type="text" class="form-control" readonly="true" [value]="strategy.id"/>
+                    <input type="text" class="form-control" readonly="true" [value]="objective.id"/>
                 </td>
-                  <!--<td>
-                      <input type="text" class="form-control" [(ngModel)]="strategy.strategy"  />
-                  </td>-->
                   <td>
-                      <button class="btn btn-primary" (click)="updateType(strategy.id,strategy.strategy)" >
+                      <input type="text" class="form-control" [(ngModel)]="objective.objective"  />
+                  </td>
+                  <td>
+                      <button class="btn btn-primary" (click)="updateType(objective.id,objective.objective)" >
                           <i class="fas fa-save"></i> แก้ไข
                       </button>
                   </td>

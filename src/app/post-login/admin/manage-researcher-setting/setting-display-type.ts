@@ -67,10 +67,28 @@ export class SettingDisplay {
             title: "ประเภทยุทธศาสตร์"
         })
 
+        public static readonly organization =
+        new SettingDisplay({
+            fieldName: "organization",
+            title: "หน่วยงาน"
+        })
+
         public static readonly strategy =
         new SettingDisplay({
             fieldName: "strategy",
             title: "ยุทธศาสตร์"
+        })
+
+        public static readonly plan =
+        new SettingDisplay({
+            fieldName: "plan",
+            title: "แผนงาน"
+        })
+
+        public static readonly issue =
+        new SettingDisplay({
+            fieldName: "issue",
+            title: "ประเด็นวิจัย"
         })
 
         public static readonly objective =
