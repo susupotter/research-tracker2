@@ -18,6 +18,7 @@ import { FundBudgetTypeComponent } from "./manage-researcher-setting/fund-budget
 import { OrganizationSettingComponent } from "./manage-strategy-setting/organization-setting/organization-setting.component";
 import { PlanSettingComponent } from "./manage-strategy-setting/plan-setting/plan-setting.component";
 import { IssueSettingComponent} from "./manage-strategy-setting/issue-setting/issue-setting.component";
+import { ManageAdminUserComponent } from "./manage-user/manage-admin-user/manage-admin-user.component";
 
 const routes: Routes = [
     { path: '', component: AdminComponent, children: [
@@ -27,6 +28,7 @@ const routes: Routes = [
         //{ path: 'post-login/researcher', loadChildren: '../post-login/researcher/researcher.module#ResearcherModule' },
       ]},
       {path:'user/listUser', component:ListUserComponent},
+      {path:'user/listAdminUser', component:ManageAdminUserComponent},
       {path:'user/roleSetting', component:RoleSettingComponent},
       {path:'setting', component:ManageResearcherSettingComponent},
       {path:'setting/researcherType', component:ResearcherTypeSettingComponent},

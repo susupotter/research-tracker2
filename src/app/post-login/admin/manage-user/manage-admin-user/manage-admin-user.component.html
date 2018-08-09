@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <h3>จัดการผู้ใช้เจ้าหน้าที่และสถาบัน</h3>
+  <div class="action-box">
+    <br>
+    <div class="button-panel-table">
+      <button class="btn btn-primary" (click)="open(content)">
+        <i class="fas fa-plus"></i>&nbsp; เพิ่มเจ้าหน้าที่</button>
+    </div>
+    <br>
+
+    <table class="table">
+      <thead>
+        <td>Username</td>
+        <td>ชื่อ-นามสกุล</td>
+        <td>ประเภทเจ้าหน้าที่</td>
+        <td></td>
+      </thead>
+      <tr *ngFor="let user of userList">
+        <td>
+          {{user.user.username}}
+        </td>
+        <td>
+          {{user.nameSurnameEN}}
+        </td>
+        <td>
+          {{user.userType.type}}
+        </td>
+        <td>
+          <button class="btn btn-primary">
+            ดูรายละเอียด
+          </button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">เพิ่มเจ้าหน้าที่</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="scroll-modal">
+          <app-text-field label="ชื่อ"></app-text-field>
+          <app-text-field label="นามสกุล"></app-text-field>
+          <app-text-field label="ตำแหน่ง"></app-text-field>
+          <app-text-field label="ประเภทเจ้าหน้าที่"></app-text-field>
+        
+        <!--<app-progress-manage [researchStatus]="researchStatus"></app-progress-manage>-->
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="c('Close click')">เพิ่มเจ้าหน้าที่</button>
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ล้างข้อมูล</button>
+    </div>
+  </ng-template>
