@@ -8,3 +8,7 @@
 .horizontal {
     margin-bottom: 0px;
 }
+
+.horizontal .control-label {
+    text-align: right;
+}

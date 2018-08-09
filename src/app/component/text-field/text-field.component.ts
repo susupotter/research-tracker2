@@ -23,6 +23,9 @@ export class TextFieldComponent implements OnInit, ControlValueAccessor {
   @Input() horizontal: boolean;
   @Input() readonly: boolean;
 
+  @Input() labelWidth: number = 6;
+  @Input() inputWidth: number = 6;
+
   private disabled: boolean;
 
   public value;
@@ -54,4 +57,20 @@ export class TextFieldComponent implements OnInit, ControlValueAccessor {
     this.onChange(value);
   }
 
+  getLabelWidthTag(){
+    return "col-" + this.labelWidth;
+  }
+
+
+  getInputWidthTag(){
+    return "col-" + this.inputWidth;
+  }
+
+  getLabelClass(){
+    if(this.horizontal){
+      return "control-label " + this.getLabelWidthTag();
+    } else {
+      return "col-form-label" 
+    }
+  }
 }

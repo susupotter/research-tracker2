@@ -1,7 +1,7 @@
 <div class="wrapper">
     <div class="form-group" [ngClass]="horizontal?'row horizontal':''">
-        <label *ngIf="label" for="{{formId}}" class="col-form-label" [ngClass]="horizontal?'col-6':''">{{label}}</label>
-        <div [ngClass]="horizontal?'col-6':''">
+        <label *ngIf="label" for="{{formId}}" [ngClass]="getLabelClass()" >{{label}}</label>
+        <div [ngClass]="horizontal?getInputWidthTag():''">
             <input type="text" class="form-control" id="{{formId}}" [disabled]="disabled" placeholder="{{placeholder}}" [readonly]="readonly" [(ngModel)]="value" (ngModelChange)="change(value)">
         </div>
     </div>
