@@ -28,6 +28,9 @@ export class SelectorFieldComponent implements OnInit, ControlValueAccessor {
 
   private innerValue: String;
 
+  @Input() labelWidth: number = 6;
+  @Input() inputWidth: number = 6;
+
   constructor() { }
 
   ngOnInit() {
@@ -60,6 +63,23 @@ export class SelectorFieldComponent implements OnInit, ControlValueAccessor {
     if(value){
       this.innerValue = value;
       this.onChange(this.innerValue)
+    }
+  }
+
+  getLabelWidthTag(){
+    return "col-" + this.labelWidth;
+  }
+
+
+  getInputWidthTag(){
+    return "col-" + this.inputWidth;
+  }
+
+  getLabelClass(){
+    if(this.horizontal){
+      return "control-label " + this.getLabelWidthTag();
+    } else {
+      return "col-form-label" 
     }
   }
 

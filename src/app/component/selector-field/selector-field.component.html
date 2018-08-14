@@ -1,7 +1,7 @@
 <div class="wrapper">
     <div class="form-group" [ngClass]="horizontal?'row horizontal':''">
-        <label for="{{formId}}" class="col-form-label" [ngClass]="horizontal?'col-6':''">{{label}}</label>
-        <select class="form-control" id="{{formId}}" [disabled]="disabled" [(ngModel)]="innerValue" (ngModelChange)="change($event)" [ngClass]="horizontal?'col-6':''" >
+        <label for="{{formId}}" class="col-form-label" [ngClass]="getLabelClass()">{{label}}</label>
+        <select class="form-control" id="{{formId}}" [disabled]="disabled" [(ngModel)]="innerValue" (ngModelChange)="change($event)" [ngClass]="horizontal?getInputWidthTag():''" >
             <option></option>
             <option *ngFor="let v of valueList" [value]="v.id">{{v.value}}</option>
         </select>
